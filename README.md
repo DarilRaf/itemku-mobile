@@ -1,12 +1,12 @@
 =================Tugas 7=================
-1. *Apa perbedaan utama antara stateless dan stateful widget dalam konteks pengembangan aplikasi Flutter?*
+1. **Apa perbedaan utama antara stateless dan stateful widget dalam konteks pengembangan aplikasi Flutter?**
 
  `Perbedaan utama antara stateless dan stateful ialah stateless widget merupakan widget yang tidak
     akan berubah dan tidak memiliki lifecycle, sementara stateful widget memiliki sifat yang dinamis
     dan mutable, widget ini memiliki lifecycle yang biasanya digunakan untuk widget didalamnya yang
     bergantung pada suatu perubahaan state atau waktu`
 
-2. *Sebutkan seluruh widget yang kamu gunakan untuk menyelesaikan tugas ini dan jelaskan fungsinya masing-masing.*
+2. **Sebutkan seluruh widget yang kamu gunakan untuk menyelesaikan tugas ini dan jelaskan fungsinya masing-masing.**
 
     `- Scaffold : Basic layout structure yang menyediakan app bar, body, dan floating action button`
 
@@ -22,7 +22,7 @@
 
     `- Container : Widget yang digunakan untuk menyimpan widget lainnya didalamnya`
 
-3. *Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)*
+3. **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)**
 
     `-Pertama, membuat aplikasi "itemku" dengan "flutter create itemku`
     
@@ -32,13 +32,13 @@
 
 =================Tugas 8=================
 
-1. *Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut yang tepat!*
+1. **Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut yang tepat!**
 
    Pada penggunaan navigator di flutter, cara kerjanya mirip seperti stack yang disusun dari page ke page. Jadi, kalau menggunakan navigator.push, halaman akan dipush
    ke atas stack, sehingga halaman tersebut yang ditampilkan, kemudian halaman sebelumnya akan terdorong ke bawah. Sementara itu, pada navigator.pushReplacement, halaman yg
    berada di paling atas stack akan di pop/dihilangkan kemudian diganti dengan halaman baru yang dipush.
 
-2. *Jelaskan masing-masing layout widget pada Flutter dan konteks penggunaannya masing-masing!*
+2. **Jelaskan masing-masing layout widget pada Flutter dan konteks penggunaannya masing-masing!**
 
    - Container: Digunakan sebagai base layout di aplikasi, dapat didekorasi dengan 'BoxDecoration'
    - Row & Column: Digunakan saat ingin menampilkan beberapa widget lain di dalmanya pada child, bisa secara horizontal (Row) maupun vertikal (Column)
@@ -49,12 +49,12 @@
    - ListView: Scrollable column widget, dapat digunakan untuk menampilkan list hingga tak terhingga
    - SizedBox: Digunakan untuk membuat tampilan box dengan ukuran yang spesifik
 
-3. *Sebutkan apa saja elemen input pada form yang kamu pakai pada tugas kali ini dan jelaskan mengapa kamu menggunakan elemen input tersebut!*
+3. **Sebutkan apa saja elemen input pada form yang kamu pakai pada tugas kali ini dan jelaskan mengapa kamu menggunakan elemen input tersebut!**
 
 Disini digunakan TextFormField untuk mengambil input dari nama, jumlah, dan deskripsi produk.
 TextFormField digunakan karena disini bisa dilakukan validasi input jika input tidak sesuai dengan yang diharapkan.
 
-4. *Bagaimana penerapan clean architecture pada aplikasi Flutter?*
+4. **Bagaimana penerapan clean architecture pada aplikasi Flutter?**
 
 Clean Architecture adalah konsep desain perangkat lunak yang memisahkan elemen-elemen kode menjadi lapisan yang berbeda, dengan tujuan untuk membuat kode lebih terorganisir, mudah diuji, dan mudah dipelihara. Dalam konteks Flutter, clean architecture biasanya terdiri dari beberapa lapisan seperti berikut:
 
@@ -64,7 +64,7 @@ Business Logic Layer (BLL) atau Domain Layer: Layer ini bertanggung jawab atas r
 
 Data Layer: Lapisan ini mengatur akses data, baik itu dari database lokal seperti SQLite atau dari layanan web melalui API. Ini termasuk kelas-kelas seperti Repository dan Data Source. Repositories bertanggung jawab untuk berkomunikasi dengan bagian eksternal seperti API atau database lokal.
 
-5. *Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial)*
+5. **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial)**
    - Membuat file dart baru untuk tampilan form, kemudian mengisinya dengan widget statefull yang berisi widget-widget input untuk memasukkan data
    - Membuat file dart untuk drawer yang akan tampil di sebelah kiri layar, kemudian memasukkannya dengan navigator yang akan menavigasi ke halaman homepage dan tambahkan item
    - Mengkonfigurasi menu.dart agar tombol Tambahkan Item di homepage juga terhubung ke halaman form dengan menggunakan navigator
@@ -73,3 +73,18 @@ Data Layer: Lapisan ini mengatur akses data, baik itu dari database lokal sepert
     `-Keempat, menambahkan widget untuk menampilkan tombol, mengambil referesnsi dari tutorial.`
     
     `-Kelima, mengubah warna tombol dari tiap-tiap button (bonus)`
+
+=================Tugas 9=================
+1. **Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?**
+
+
+
+2. **Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.**
+ 
+3. **Jelaskan mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter.**
+ 
+4. **Jelaskan mekanisme autentikasi dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.**
+ 
+5. **Sebutkan seluruh widget yang kamu pakai pada tugas ini dan jelaskan fungsinya masing-masing.**
+
+6. **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).**
