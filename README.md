@@ -77,14 +77,50 @@ Data Layer: Lapisan ini mengatur akses data, baik itu dari database lokal sepert
 =================Tugas 9=================
 1. **Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?**
 
-
+Ya, kita bisa mengambil data JSON di Flutter tanpa membuat model kelas terlebih dahulu dengan menggunakan `Map` untuk deserialisasi secara langsung. Metode ini baik untuk data sederhana dan penggunaan yang tidak kompleks. Namun, untuk struktur JSON yang lebih kompleks dan untuk memastikan ketepatan tipe data serta kemudahan maintenance, membuat model kelas biasanya lebih disarankan.
 
 2. **Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.**
+
+"CookieRequest" adalah permintaan HTTP yang membawa cookie untuk mengelola sesi pengguna dan menyimpan informasi penting seperti status login. Dalam aplikasi Flutter, instance "CookieRequest" yang sama perlu dibagikan ke seluruh komponen untuk menjaga agar sesi pengguna tetap konsisten, memastikan keamanan dengan mempertahankan otentikasi pengguna di berbagai bagian aplikasi, dan memudahkan pengelolaan state yang terpusat.
  
 3. **Jelaskan mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter.**
+
+Flutter mengirim request ke django untuk data berupa json, kemudian data yg didapat diparse agar bisa menjadi objek di flutter dan kemudian ditampilkan menggunakan model "products" pada Flutter.
  
 4. **Jelaskan mekanisme autentikasi dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.**
+
+Login pada flutter akan diteruskan ke web django dengan sistem login yang berbeda yg berada dalam app "authentication". Disitu dikirimkan data berupa username dan password, yang kemudian fungsi pada views.py akan melakukan autentikasi dan kemudian mengembalikan status code yang menandakan apakah login berhasil atau tidak. Jika berhasil, maka diteruskan pesan berhasil dan status code kembali ke Flutter, yang kemudian Flutter akan meng-handle tampilan homepage setelah login.
  
 5. **Sebutkan seluruh widget yang kamu pakai pada tugas ini dan jelaskan fungsinya masing-masing.**
 
+Pada pembuatan fitur "detail item" widget yang saya gunakan ialah:
+
+- Scaffold: Menampilkan layar
+
+- AppBar: Menampilkan bar di atas layar
+
+- Column: Menampilkan item dalam bentuk kolom
+
+- Expanded: Menampilkan widget dengan mengisi space yang tersedia di main axis
+
+- ListView: Menampilkan widgets dalam bentuk list
+
+- SizedBox: Menampilkan box, yang pada konteks tugas ini, hanya menampilkan box kosong untuk memberikan space antar item.
+
+- Container: Dapat menampung widgets lain yang bisa disesuaikan dengan height, width, color, dan lainnya.
+
 6. **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).**
+
+- Memperbaiki deploy pada projek django
+
+- Membuat file "login.dart" pada folder "screens" dan membuat halaman login
+
+- Membuat app baru pada projek django bernama "authentication" kemudian mengisi views dengan fungsi login dan logout
+
+- Mensetting projek django agar bisa diintegrasikan dengan flutter
+
+- Membuat model custom dengan menggunakan website Quicktype menggunakan data json dari django
+
+- Membuat file "list_product.dart" pada folder "screens" untuk menampilkan daftar item yang dimiliki user.
+
+- Membuat file "detail_item.dart" untuk menampilkan detail item pada flutter, dengan field-field yang sesuai

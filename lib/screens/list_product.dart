@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:itemku/models/products.dart';
 import 'package:itemku/widgets/left_drawer.dart';
+import 'package:itemku/screens/detail_item.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class _ProductPageState extends State<ProductPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Product'),
+          title: const Text('Items'),
         ),
         drawer: const LeftDrawer(),
         body: FutureBuilder(
@@ -60,10 +61,19 @@ class _ProductPageState extends State<ProductPage> {
                 } else {
                   return ListView.builder(
                       itemCount: snapshot.data!.length,
-                      itemBuilder: (_, index) => Container(
+                      itemBuilder: (_, index) => InkWell(
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return DetailScreen(
+                                  // loggedInUser: widget.loggedInUser,
+                                  selectedItem: snapshot.data![index]);
+                            }));
+                          },
+                          child: Card(
                             margin: const EdgeInsets.symmetric(
                                 horizontal: 16, vertical: 12),
-                            padding: const EdgeInsets.all(20.0),
+                            // padding: const EdgeInsets.all(20.0),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,7 +92,7 @@ class _ProductPageState extends State<ProductPage> {
                                     "${snapshot.data![index].fields.description}")
                               ],
                             ),
-                          ));
+                          )));
                 }
               }
             }));
